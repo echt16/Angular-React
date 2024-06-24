@@ -1,0 +1,7 @@
+<div [ngStyle]="{'display':'flex', 'justify-content':'space-around', 'margin-top':'20px'}">
+  <button class="btn btn-primary" (click)="changeText(0)">Car</button>
+  <button class="btn btn-primary" (click)="changeText(1)">Airplane</button>
+  <button class="btn btn-primary" (click)="changeText(2)">Boot</button>
+</div>
+<input type="textarea" [(ngModel)]="text" *ngIf="text !== ''">
+<p *ngIf="text !== ''">{{ text | uppercase}}</p>
