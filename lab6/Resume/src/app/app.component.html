@@ -1,0 +1,76 @@
+<header [ngClass]="{headerContainer:true}">
+  <div [ngClass]="{headerItem:true}">
+    <img [ngClass]="{headerImg:true}" src="{{person.imageSrc}}" alt="img">
+  </div>
+  <div [ngClass]="{headerItem:true}">
+    <div [ngClass]="{headerText:true}">
+      {{person.lastname | uppercase}}, {{person.firstname | uppercase}} {{person.patronymic ==
+      null?'':person.patronymic}}
+    </div>
+  </div>
+  <div [ngClass]="{headerLastItem:true}">
+    {{person.contactDetails.email}}
+  </div>
+</header>
+<main [ngClass]="{mainContainer:true}">
+  <div [ngClass]="{mainInfoContainer:true}">
+    <div [ngClass]="{mainImg:true}">
+      <img src="{{person.imageSrc}}" alt="img">
+    </div>
+    <div [ngClass]="{mainInfo:true}">
+      <div [ngClass]="{mainInfoItem:true}">
+        <span>Firstname</span>
+        <span>{{person.firstname}}</span>
+      </div>
+      <div [ngClass]="{mainInfoItem:true}">
+        <span>Lastname</span>
+        <span>{{person.lastname}}</span>
+      </div>
+      <div *ngIf="person.patronymic != null" [ngClass]="{mainInfoItem:true}">
+        <span>Patronymic</span>
+        <span>{{person.patronymic}}</span>
+      </div>
+      <div [ngClass]="{mainInfoItem:true}">
+        <span>Birthday</span>
+        <span>{{person.birthday | date:'dd.MM.yyyy'}}</span>
+      </div>
+      <div [ngClass]="{mainInfoItem:true}">
+        <span>Skills amount</span>
+        <span>{{person.skills.length}}</span>
+      </div>
+      <div [ngClass]="{mainInfoItem:true}">
+        <span>Phone</span>
+        <span>{{person.contactDetails.phoneNumber}}</span>
+      </div>
+      <div [ngClass]="{mainInfoItem:true}">
+        <span>Email</span>
+        <span>{{person.contactDetails.email}}</span>
+      </div>
+      <div [ngClass]="{mainInfoItem:true}">
+        <span>City</span>
+        <span>{{person.contactDetails.city}}</span>
+      </div>
+      <div [ngClass]="{mainInfoItem:true}">
+        <span>Experience (years)</span>
+        <span>{{person.experience.years}}</span>
+      </div>
+    </div>
+  </div>
+  <div [ngClass]="{addInfoContainer:true}">
+    <ol [ngClass]="{addInfoItem:true}">
+      <p>Job places:</p>
+      <li *ngFor="let item of person.experience.jobPlaces">
+        <div>{{item.company|uppercase}}</div>
+        <div>From {{item.startTime|date:'dd.MM.yyyy'}} to {{item.endTime|date:'dd.MM.yyyy'}}</div>
+        <div>({{item.description}})</div>
+      </li>
+    </ol>
+    <ol [ngClass]="{addInfoItem:true}">
+      <p>Skills:</p>
+      <li *ngFor="let item of person.skills">
+        <div>{{item.name|uppercase}}</div>
+        <div>({{item.description}})</div>
+      </li>
+    </ol>
+  </div>
+</main>
