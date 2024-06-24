@@ -1,0 +1,16 @@
+<div [ngClass]="{mainInfoContainer:true}">
+    <div [ngClass]="{mainImg:true}">
+        <img src="{{person.imageSrc}}" alt="img">
+    </div>
+    <div [ngClass]="{mainInfo:true}">
+        <app-main-info-item name="Firstname" [value]="person.firstname"></app-main-info-item>
+        <app-main-info-item name="Lastname" [value]="person.lastname"></app-main-info-item>
+        <app-main-info-item name="Patronymic" [value]="person.patronymic"></app-main-info-item>
+        <app-main-info-item name="Birthday" [value]="person.birthday|date:'dd.MM.yyyy'"></app-main-info-item>
+        <app-main-info-item name="Skills amount" [value]="person.skills.length"></app-main-info-item>
+        <app-main-info-item name="Phone" [value]="person.contactDetails.phoneNumber"></app-main-info-item>
+        <app-main-info-item name="Email" [value]="person.contactDetails.email"></app-main-info-item>
+        <app-main-info-item name="City" [value]="person.contactDetails.city"></app-main-info-item>
+        <app-main-info-item name="Experience (years)" [value]="person.experience.years"></app-main-info-item>
+    </div>
+</div>

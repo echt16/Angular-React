@@ -1,3 +1,4 @@
+<h1>lab6/hw6 part 1 (1,2,3)</h1>
 <header [ngClass]="{headerContainer:true}">
   <div [ngClass]="{headerItem:true}">
     <img [ngClass]="{headerImg:true}" src="{{person.imageSrc}}" alt="img">
@@ -13,58 +14,20 @@
   </div>
 </header>
 <main [ngClass]="{mainContainer:true}">
-  <div [ngClass]="{mainInfoContainer:true}">
-    <div [ngClass]="{mainImg:true}">
-      <img src="{{person.imageSrc}}" alt="img">
-    </div>
-    <div [ngClass]="{mainInfo:true}">
-      <div [ngClass]="{mainInfoItem:true}">
-        <span>Firstname</span>
-        <span>{{person.firstname}}</span>
-      </div>
-      <div [ngClass]="{mainInfoItem:true}">
-        <span>Lastname</span>
-        <span>{{person.lastname}}</span>
-      </div>
-      <div *ngIf="person.patronymic != null" [ngClass]="{mainInfoItem:true}">
-        <span>Patronymic</span>
-        <span>{{person.patronymic}}</span>
-      </div>
-      <div [ngClass]="{mainInfoItem:true}">
-        <span>Birthday</span>
-        <span>{{person.birthday | date:'dd.MM.yyyy'}}</span>
-      </div>
-      <div [ngClass]="{mainInfoItem:true}">
-        <span>Skills amount</span>
-        <span>{{person.skills.length}}</span>
-      </div>
-      <div [ngClass]="{mainInfoItem:true}">
-        <span>Phone</span>
-        <span>{{person.contactDetails.phoneNumber}}</span>
-      </div>
-      <div [ngClass]="{mainInfoItem:true}">
-        <span>Email</span>
-        <span>{{person.contactDetails.email}}</span>
-      </div>
-      <div [ngClass]="{mainInfoItem:true}">
-        <span>City</span>
-        <span>{{person.contactDetails.city}}</span>
-      </div>
-      <div [ngClass]="{mainInfoItem:true}">
-        <span>Experience (years)</span>
-        <span>{{person.experience.years}}</span>
-      </div>
-    </div>
-  </div>
+  <app-main-info [person]="person"></app-main-info>
   <div [ngClass]="{addInfoContainer:true}">
     <ol [ngClass]="{addInfoItem:true}">
       <p>Job places:</p>
-      <li *ngFor="let item of person.experience.jobPlaces">
+      <li *ngFor="let item of jobPlaces">
         <div>{{item.company|uppercase}}</div>
         <div>From {{item.startTime|date:'dd.MM.yyyy'}} to {{item.endTime|date:'dd.MM.yyyy'}}</div>
-        <div>({{item.description}})</div>
+        <div>({{services.getDescrJobPlace(item)}})</div>
       </li>
     </ol>
+    <div [ngClass]="{addInfoItem:true}" [ngStyle]="{'flex':'1', 'text-align':'center'}">
+      <p>Experience description</p>
+      <div>{{services.getDescrOfExperience()}}</div>
+    </div>
     <ol [ngClass]="{addInfoItem:true}">
       <p>Skills:</p>
       <li *ngFor="let item of person.skills">
@@ -74,3 +37,19 @@
     </ol>
   </div>
 </main>
+
+<hr>
+<h1>hw6 part 2(3,4,5)</h1>
+<div *ngFor="let item of hobbies" [ngStyle]="{'background-color':'lightblue'}">
+  <p [ngStyle]="{'color':'green', 'font-size':'50px'}">Name: {{item.name}}</p>
+  <p>Description: {{item.description}}</p>
+  <div [ngStyle]="{'font-size':'20px'}">
+    Image:<br>
+    <img src="{{item.hobbyImg}}"  [ngStyle]="{'width':'500px'}" alt="hobby">
+  </div>
+  <div [ngStyle]="{'font-size':'20px'}">
+    Person image:<br>
+    <img src="{{item.personImg}}" alt="hobby" [ngStyle]="{'width':'500px'}">
+  </div>
+  <hr>
+</div>
