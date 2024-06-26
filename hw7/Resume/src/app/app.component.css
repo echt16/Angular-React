@@ -1,0 +1,54 @@
+
+.headerContainer {
+    display: flex;
+    height: 50px;
+    border-bottom: 1px solid rgba(153,153,255, 1);
+    background-color: rgba(153,153,255, 0.6);
+    padding: 10px 20px;
+}
+
+.headerItem {
+    float: left;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.headerImg {
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+}
+
+.headerText {
+    width: auto;
+}
+
+.headerLastItem{
+    flex:1;
+    align-items: center;
+    justify-content: right;
+    display: flex;
+}
+
+.mainContainer{
+    background-color: rgba(153,153,255, 0.4);
+    padding: 10px 20px;
+}
+
+
+.addInfoContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.addInfoItem li{
+    padding: 5px 0;
+}
+
+.addInfoItem p{
+    font-weight: bold;
+}

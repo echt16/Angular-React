@@ -1,0 +1,7 @@
+.mainInfoItem{
+    width: 100%;
+    display: flex;
+    padding: 10px 10px;
+    justify-content: space-between;
+    border-bottom:1px solid rgba(153,153,255, 1);
+}

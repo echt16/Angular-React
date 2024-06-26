@@ -1,0 +1,17 @@
+.mainInfoContainer{
+    display: flex;
+    border-bottom: 2px solid rgba(153,153,255, 1);
+}
+
+.mainImg{
+    width: 50%;
+}
+
+.mainImg img{
+    border-radius: 30px;
+    max-width: 100%;
+}
+
+.mainInfo{
+    width: 50%;
+}

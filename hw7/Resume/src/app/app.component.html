@@ -1,4 +1,3 @@
-<h1>lab6/hw6 part 1 (1,2,3)</h1>
 <header [ngClass]="{headerContainer:true}">
   <div [ngClass]="{headerItem:true}">
     <img [ngClass]="{headerImg:true}" src="{{person.imageSrc}}" alt="img">
@@ -18,38 +17,22 @@
   <div [ngClass]="{addInfoContainer:true}">
     <ol [ngClass]="{addInfoItem:true}">
       <p>Job places:</p>
-      <li *ngFor="let item of jobPlaces">
+      <li *ngFor="let item of getJobPlaces()">
         <div>{{item.company|uppercase}}</div>
         <div>From {{item.startTime|date:'dd.MM.yyyy'}} to {{item.endTime|date:'dd.MM.yyyy'}}</div>
-        <div>({{services.getDescrJobPlace(item)}})</div>
+        <div>({{getDescrJobPlace(item)}})</div>
       </li>
     </ol>
     <div [ngClass]="{addInfoItem:true}" [ngStyle]="{'flex':'1', 'text-align':'center'}">
       <p>Experience description</p>
-      <div>{{services.getDescrOfExperience()}}</div>
+      <div>{{getDescrOfExperience()}}</div>
     </div>
     <ol [ngClass]="{addInfoItem:true}">
       <p>Skills:</p>
       <li *ngFor="let item of person.skills">
         <div>{{item.name|uppercase}}</div>
-        <div>({{item.description}})</div>
+        <div>({{getDescrOfSkill(item)}})</div>
       </li>
     </ol>
   </div>
 </main>
-
-<hr>
-<h1>hw6 part 2(3,4,5)</h1>
-<div *ngFor="let item of hobbies" [ngStyle]="{'background-color':'lightblue'}">
-  <p [ngStyle]="{'color':'green', 'font-size':'50px'}">Name: {{item.name}}</p>
-  <p>Description: {{item.description}}</p>
-  <div [ngStyle]="{'font-size':'20px'}">
-    Image:<br>
-    <img src="{{item.hobbyImg}}" [ngStyle]="{'width':'500px'}" alt="hobby">
-  </div>
-  <div [ngStyle]="{'font-size':'20px'}">
-    Person image:<br>
-    <img src="{{item.personImg}}" alt="hobby" [ngStyle]="{'width':'500px'}">
-  </div>
-  <hr>
-</div>
