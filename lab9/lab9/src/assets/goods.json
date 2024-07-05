@@ -1,0 +1,24 @@
+{
+    "goods":[
+        {
+            "goodName": "good1",
+            "goodPrice": 1
+        },
+        {
+            "goodName": "good2",
+            "goodPrice": 2
+        },
+        {
+            "goodName": "good3",
+            "goodPrice": 3
+        },
+        {
+            "goodName": "good4",
+            "goodPrice": 4
+        },
+        {
+            "goodName": "good5",
+            "goodPrice": 5
+        }
+    ]
+}
