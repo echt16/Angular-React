@@ -1,0 +1,80 @@
+header {
+    height: 100px;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.5);
+}
+
+.col-auto-btn {
+    display: flex;
+    align-items: flex-end;
+}
+
+.films-container {
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.film-container {
+    margin-top: 20px;
+    border-radius: 30px;
+    background-color: rgba(0, 255, 255, 0.1);
+    padding: 20px 0;
+}
+
+.film-info-container {
+    display: flex;
+}
+
+.films-container .film-container:nth-child(2n) > .film-info-container {
+    flex-direction: row-reverse;
+}
+
+.film-img,
+.film-description {
+    width: 50%;
+}
+
+.film-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.film-img img {
+    max-width: 90%;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.film-descr-group {
+    padding: 0px 20px;
+}
+
+.film-descr-group p:first-child {
+    margin-bottom: 0;
+}
+
+.film-descr-group p:last-child {
+    margin: 0;
+    padding: 10px 20px;
+    background-color: rgba(0, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+.film-descr-group p.value {
+    padding: 10px 20px;
+    background-color: rgba(0, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+.film-descr{
+    padding: 10px 20px;
+    background-color: rgba(0, 255, 255, 0.3);
+    border-radius: 15px;
+    margin:15px 10px;
+}

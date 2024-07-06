@@ -1,9 +1,9 @@
 import { Doc } from "./doc"
 
-export interface Root {
-    docs: Doc[]
-    total: number
-    limit: number
-    page: number
-    pages: number
-  }
+export class Root {
+    docs: Doc[] = []
+    total: number = 0
+    limit: number = 10
+    page: number = 1
+    pages: number = 0
+}
