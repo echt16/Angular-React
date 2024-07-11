@@ -1,0 +1,11 @@
+.App {
+  display: flex;
+  margin: 30px 30px;
+  flex-direction: column;
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
