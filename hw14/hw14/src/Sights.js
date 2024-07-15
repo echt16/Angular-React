@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 
-function Pictures() {
+function Sights() {
     const { maxCount } = useParams();
     const pictures = [
         "https://cdn.britannica.com/24/189624-050-F3C5BAA9/Mona-Lisa-oil-wood-panel-Leonardo-da.jpg?w=600&q=60",
@@ -14,15 +14,16 @@ function Pictures() {
         "https://cdn.britannica.com/81/197981-050-076495E8/Ginevra-de-Benci-oil-panel-Leonardo-da.jpg?w=600&q=60",
         "https://cdn.britannica.com/31/3331-004-59797F9E/The-Virgin-and-Child-with-Saint-Anne.jpg?w=600&q=60"
     ];
+    console.log(maxCount);
     return (
         <div>
             {
                 pictures.slice(0, maxCount).map((src, index) => {
-                    <img src={src} key={index} />
+                    return <img src={src} key={index} />
                 })
             }
         </div>
     );
 }
 
-export default Pictures;
+export default Sights;

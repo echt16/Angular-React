@@ -1,8 +1,8 @@
 import { useParams } from "react-router";
 
-function Pictures() {
+function Images() {
     const { maxCount } = useParams();
-    const pictures = [
+    const images = [
         "https://cdn.britannica.com/24/189624-050-F3C5BAA9/Mona-Lisa-oil-wood-panel-Leonardo-da.jpg?w=600&q=60",
         "https://cdn.britannica.com/04/95904-050-7EB39FC8/Last-Supper-wall-painting-restoration-Leonardo-da-1999.jpg?w=600&q=60",
         "https://cdn.britannica.com/68/145968-050-01768DAD/Vitruvian-Man-Leonardo-da-Vinci-Gallerie-dellAccademia.jpg?w=600&q=60",
@@ -17,12 +17,12 @@ function Pictures() {
     return (
         <div>
             {
-                pictures.slice(0, maxCount).map((src, index) => {
-                    <img src={src} key={index} />
+                images.slice(0, maxCount).map((src, index) => {
+                    return <img key={index} src={src} />
                 })
             }
         </div>
     );
 }
 
-export default Pictures;
+export default Images;
